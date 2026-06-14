@@ -1,0 +1,16 @@
+# Build / runtime artifacts
+.coderabbit/
+.codex/
+sample-workspace/
+
+# Local env
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

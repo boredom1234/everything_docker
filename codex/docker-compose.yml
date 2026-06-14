@@ -1,0 +1,17 @@
+services:
+  codex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: codex-cli:local
+    container_name: codex
+    working_dir: /workspace
+    volumes:
+      - codex-config:/root/.codex
+      - ${WORKSPACE}:/workspace
+    stdin_open: true
+    tty: true
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+volumes:
+  codex-config:

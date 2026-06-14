@@ -1,0 +1,17 @@
+services:
+  coderabbit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: coderabbit-cli:local
+    container_name: coderabbit
+    working_dir: /workspace
+    volumes:
+      - coderabbit-config:/root/.coderabbit
+      - ${WORKSPACE}:/workspace
+    stdin_open: true
+    tty: true
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+volumes:
+  coderabbit-config:
